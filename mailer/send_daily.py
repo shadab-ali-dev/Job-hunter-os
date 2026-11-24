@@ -129,6 +129,8 @@ RESUME_DIR = os.path.join(BASE, "resume")
 
 def pick_resume_and_pitch(role):
     r = role.lower()
+    if re.search(r"\b(ai|artificial intelligence|llm|llms|genai|gen ai|agent|agents|agentic|automation|machine learning|ml|nlp|rag)\b", r):
+        return "Shadab_Ali_AI_Automation_Engineer_Resume.pdf", "LLM-powered workflow automation, multi-agent Python pipelines, API orchestration, and production SQL/cloud systems"
     if any(k in r for k in ("oracle", "dba", "database")):
         return "Shadab_Ali_Oracle_DBA_Resume.pdf", "Oracle database administration, RMAN backup/recovery, archivelog management, and SQL performance troubleshooting"
     if any(k in r for k in ("frontend", "front-end", "ui", "ux", "react", "web")):
@@ -160,6 +162,8 @@ def build_msg(sender_name, sender_email, job):
     _hook = (j.get("_hook", "").strip() + " ") if j.get("_hook") else ""
     if "Frontend" in pdf_name:
         _exp = "I have 2.4 years of software and IT operations experience alongside hands-on web development with HTML, CSS, Bootstrap, Django, and AWS cloud fundamentals—backed by an AWS Certified Cloud Practitioner credential and a Bachelor's degree."
+    elif "AI_Automation" in pdf_name:
+        _exp = "Over the past 2.4 years, I’ve built production Python and LLM-driven automation pipelines—integrating Groq/OpenAI APIs, Whisper STT, DNS/IMAP verification, and SQL workflows to eliminate manual bottlenecks—backed by an AWS Certified Cloud Practitioner credential and a Bachelor’s degree."
     elif "Data_Analyst" in pdf_name:
         _exp = "Over the last 2.4 years, I've worked with SQL data extraction, validation, and Python (Pandas) workflows to clean datasets, automate recurring reports, and resolve data discrepancies—backed by an AWS Certified Cloud Practitioner credential and a Bachelor's degree."
     elif "Python_Developer" in pdf_name:

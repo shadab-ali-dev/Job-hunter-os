@@ -1,0 +1,10 @@
+.env
+data/
+resume/
+*.pdf
+*.csv
+*.json
+*.log
+latest_export.txt
+__pycache__/
+*.pyc
